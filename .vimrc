@@ -1,6 +1,7 @@
 syntax on
 
-colorscheme atom-dark-256 
+" atom theme
+	"colorscheme atom-dark-256 
 
 " sublime text theme
 	"colorscheme monokai
@@ -10,9 +11,9 @@ colorscheme atom-dark-256
 	"let g:airline_theme = 'codedark'
 
 """ gruvbox color scheme (dark)
-	"set background=dark
-	"let g:gruvbox_contrast_dark='hard'
-	"colorscheme gruvbox
+	set background=dark
+	let g:gruvbox_contrast_dark='hard'
+	colorscheme gruvbox
 
 set nu
 set tabstop=2
@@ -23,7 +24,7 @@ set wildmenu
 
 " shortcuts
 map q :quit<CR>
-map <C-B> :NERDTreeToggle<CR>
+map <C-K><C-B> :NERDTreeToggle<CR>
 map <C-J> :term<CR>
 
 " set the runtime path to include Vundle and initialize
@@ -38,7 +39,7 @@ Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'honza/vim-snippets'
-Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'MarcWeber/vim-addon-mw-utils' 
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 " Themes
