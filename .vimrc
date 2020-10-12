@@ -1,68 +1,47 @@
+" functionalities
 syntax on
-
-" atom theme
-	"colorscheme atom-dark-256 
-
-" sublime text theme
-	"colorscheme monokai
-
-""" vim-code-dark (vscode vim theme)
-	"colorscheme codedark
-	"let g:airline_theme = 'codedark'
-
-""" gruvbox color scheme (dark)
-	set background=dark
-	let g:gruvbox_contrast_dark='hard'
-	colorscheme gruvbox
-
 set nu
 set tabstop=2
-set nocompatible              " be iMproved, required
+set nocompatible
 set autoindent
 set incsearch
 set wildmenu
+
+" ayu theme configuration :)
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
 
 " shortcuts
 map q :quit<CR>
 map <C-K><C-B> :NERDTreeToggle<CR>
 map <C-J> :term<CR>
 
-" set the runtime path to include Vundle and initialize
+" vundle :)
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Utilities
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'VundleVim/Vundle.vim'
+" close (), {}, [], etc
+Plugin 'jiangmiao/auto-pairs'
+" bottom bar to show language, lines, coding, etc
 Plugin 'vim-airline/vim-airline'
+" file explorer (side navigation)
 Plugin 'preservim/nerdtree'
-Plugin 'tpope/vim-surround'
+" emmet for vim (faster html coding)
 Plugin 'mattn/emmet-vim'
+
+" snippets
 Plugin 'honza/vim-snippets'
-Plugin 'MarcWeber/vim-addon-mw-utils' 
+Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-" Themes
-Plugin 'morhetz/gruvbox'
-Plugin 'tomasiser/vim-code-dark'
-Plugin 'dracula/vim', { 'name': 'dracula' }
-Plugin 'sickill/vim-monokai'
-Plugin 'gosukiwi/vim-atom-dark'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+" themes
+Plugin 'tomasr/molokai'
+Plugin 'ayu-theme/ayu-vim'
 
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-" 
-"
-" github.com/moisesduartem/vimrc
+call vundle#end()
+filetype plugin indent on
+
+" github.com/moisesduartem/dotfiles
