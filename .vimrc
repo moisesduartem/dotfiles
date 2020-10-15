@@ -7,11 +7,17 @@ set autoindent
 set incsearch
 set wildmenu
 
-" ayu theme configuration :)
-set termguicolors
-let ayucolor="dark"
-colorscheme ayu
+" github theme configuration :) 
+	set termguicolors
+	colorscheme github
+	let g:airline_theme = "github"	
+	
 
+" ayu theme configuration :)
+ "set termguicolors
+ "let ayucolor="dark"
+ "colorscheme ayu
+	
 " shortcuts
 map q :quit<CR>
 map <C-K><C-B> :NERDTreeToggle<CR>
@@ -40,6 +46,7 @@ Plugin 'garbas/vim-snipmate'
 " themes
 Plugin 'tomasr/molokai'
 Plugin 'ayu-theme/ayu-vim'
+Plugin 'cormacrelf/vim-colors-github'
 
 call vundle#end()
 filetype plugin indent on
