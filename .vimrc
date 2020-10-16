@@ -8,9 +8,10 @@ set incsearch
 set wildmenu
 
 " github theme configuration :) 
-	set termguicolors
-	colorscheme github
-	let g:airline_theme = "github"	
+set background=dark
+set termguicolors
+colorscheme github
+let g:airline_theme = "github"	
 	
 
 " ayu theme configuration :)
