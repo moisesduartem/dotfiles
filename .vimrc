@@ -20,7 +20,11 @@ let g:airline_theme = "github"
  "set termguicolors
  "let ayucolor="dark"
  "colorscheme ayu
-	
+
+" c & c++ compiler configuration
+autocmd filetype c nnoremap <F4> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+
 " shortcuts
 map q :quit<CR>
 map <C-K><C-B> :NERDTreeToggle<CR>
