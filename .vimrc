@@ -2,6 +2,8 @@
 syntax on
 set nu
 set tabstop=2
+set shiftwidth=2
+set expandtab
 set nocompatible
 set autoindent
 set incsearch
