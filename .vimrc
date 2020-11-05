@@ -1,3 +1,7 @@
+" colorscheme / theme
+colorscheme gruvbox
+set background=dark
+
 " functionalities
 syntax on
 set nu
@@ -8,18 +12,6 @@ set nocompatible
 set autoindent
 set incsearch
 set wildmenu
-
-" github theme configuration :) 
-set background=dark
-set termguicolors
-colorscheme github
-let g:airline_theme = "github"	
-	
-
-" ayu theme configuration :)
- "set termguicolors
- "let ayucolor="dark"
- "colorscheme ayu
 
 " c & c++ compiler configuration
 autocmd filetype c nnoremap <F4> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
@@ -51,9 +43,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 
 " themes
-Plugin 'tomasr/molokai'
-Plugin 'ayu-theme/ayu-vim'
-Plugin 'cormacrelf/vim-colors-github'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 filetype plugin indent on
