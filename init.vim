@@ -36,8 +36,13 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 " emmet for vim (faster html coding)
 Plug 'mattn/emmet-vim'
+" dracula theme
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
+
+colorscheme dracula
+
 filetype plugin indent on
 
 " github.com/moisesduartem/dotfiles
