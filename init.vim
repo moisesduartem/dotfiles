@@ -1,5 +1,4 @@
 " colorscheme / theme
-colorscheme gruvbox
 set background=dark
 
 " functionalities
