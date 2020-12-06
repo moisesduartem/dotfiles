@@ -36,6 +36,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 " emmet for vim (faster html coding)
 Plug 'mattn/emmet-vim'
+" expand syntax highlight
+Plug 'sheerun/vim-polyglot'
 
 " Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'morhetz/gruvbox'
