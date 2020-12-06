@@ -22,9 +22,11 @@ autocmd filetype java nnoremap <F4> :w <bar> exec '!javac'.shellescape('%').' &&
 " shortcuts
 nnoremap <C-S> :w<CR>
 nnoremap <C-W> :quit<CR>
-map q :quit<CR>
-map <C-K><C-B> :NERDTreeToggle<CR>
-map <C-J> :term<CR>
+nnoremap wq :wq<CR>
+nnoremap q :quit<CR>
+nnoremap qq :quit!<CR>
+nnoremap - :NERDTreeToggle<CR>
+nnoremap = :term<CR>
 
 " vim-plug :)
 
@@ -40,7 +42,7 @@ Plug 'mattn/emmet-vim'
 Plug 'sheerun/vim-polyglot'
 " file manager
 Plug 'preservim/nerdtree'
-
+    
 " Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
