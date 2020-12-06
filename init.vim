@@ -13,11 +13,11 @@ set incsearch
 set wildmenu
 
 " c & c++ compiler configuration
-autocmd filetype c nnoremap <F4> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
-autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd filetype c nnoremap <F4> :w <bar> exec '!gcc '.shellescape('%').' -o'.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').'-o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 
 " java compiler configuration
-autocmd filetype java nnoremap <F4> :w <bar> exec '!javac '.shellescape('%').' && java '.shellescape('%:r')<CR>
+autocmd filetype java nnoremap <F4> :w <bar> exec '!javac'.shellescape('%').' && java '.shellescape('%:r')<CR>
 
 " shortcuts
 nnoremap <C-S> :w<CR>
@@ -36,13 +36,16 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 " emmet for vim (faster html coding)
 Plug 'mattn/emmet-vim'
-" dracula theme
-Plug 'dracula/vim', { 'as': 'dracula' }
+
+" Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
-colorscheme dracula
+syntax on
+colorscheme onedark
 
 filetype plugin indent on
 
-" github.com/moisesduartem/dotfiles
+"Plugin 'joshdick/onedark.vim' github.com/moisesduartem/dotfiles
