@@ -38,12 +38,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim'
 " expand syntax highlight
 Plug 'sheerun/vim-polyglot'
+" file manager
+Plug 'preservim/nerdtree'
 
 " Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 
 call plug#end()
+
+let NERDTreeShowHidden=1
 
 syntax on
 colorscheme onedark
