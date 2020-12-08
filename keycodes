@@ -1,0 +1,4 @@
+keysym h = h H NoSymbol NoSymbol Left 
+keysym j = j J NoSymbol NoSymbol Down
+keysym k = k K NoSymbol NoSymbol Up
+keysym l = l L NoSymbol NoSymbol Right
