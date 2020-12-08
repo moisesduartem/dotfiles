@@ -70,10 +70,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot'
 
 " File Explorer 
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
@@ -117,20 +116,6 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
-" coc
-let g:coc_global_extensions = [
-    \  'coc-snippets',
-    \  'coc-emmet',
-    \  'coc-html',
-    \  'coc-css',
-    \  'coc-json', 
-    \  'coc-phpls',
-    \  'coc-yaml',
-    \  'coc-prettier',
-    \  'coc-eslint',
-    \  'coc-jedi',
-    \  'coc-python',
-    \ ]
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -155,29 +140,10 @@ function! s:check_back_space() abort
     inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>""
     " "
     " /coc
-" :CocConfig
-" {
-"   "suggest.noselect": false,
-"   "coc.preferences.formatOnSaveFiletypes": [
-"       "javascript",
-"       "typescript",
-"       "javascriptreact",
-"       "typescriptreact",
-"       "css",
-"       "json",
-"       "yaml"
-"     ],
-"       "diagnostic.displayByAle": true,
-"       "coc.preferences.colorSupport": true,
-"       "prettier.eslintIntegration": true,
-"       "prettier.tabWidth": 2
-"             }
-"     ]
-" }
-"
-    syntax on
+
+syntax on
 colorscheme onedark
 
 filetype plugin indent on
 
-"Plugin 'joshdick/onedark.vim' github.com/moisesduartem/dotfiles
+" github.com/moisesduartem/dotfiles
