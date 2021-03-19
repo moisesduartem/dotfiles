@@ -1,0 +1,35 @@
+// ...
+
+"profiles": {
+        "defaults": {
+            // ...
+        },
+        "list": [
+            // ...
+            {
+                // ...
+                
+                "hidden": false,
+                "name": "Ubuntu-20.04",
+                "source": "Windows.Terminal.Wsl",
+                "cursorShape": "filledBox"
+            },
+            
+                // ...
+        ]
+    },
+
+"actions": [
+  
+        // ...
+  
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+v"
+        },
+        
+        //...
+    ]
