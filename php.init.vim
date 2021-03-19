@@ -2,24 +2,24 @@
 syntax on
 set termguicolors
 set nu
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set autoindent
 set hlsearch
 set incsearch
 set wildmenu
+set encoding=UTF-8
 
 " shortcuts
 " let mapleader="\<space>"
-nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
+nnoremap <F5> :source %<CR>
 nnoremap <C-j> :FloatermNew<CR>
 nnoremap <C-p> :FZF<CR>
 nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-i> :PlugInstall<CR>
 nnoremap <C-s> :w<CR>
 nnoremap <C-w> :q<CR>
-nmap <F8> :TagbarToggle<CR>
 
 " vim-plug
 call plug#begin()
@@ -46,6 +46,9 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" devicons
+" Plug 'ryanoasis/vim-devicons'
+
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -63,8 +66,14 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
     let col = col('.') - 1
-      return !col || getline('.')[col - 1]  =~# '\s'
-    endfunction
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+if has('nvim')
+    inoremap <silent><expr> <c-space> coc#refresh()
+else
+    inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 " gruvbox
 " let g:gruvbox_contrast_dark="hard"
