@@ -20,6 +20,8 @@ nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-i> :PlugInstall<CR>
 nnoremap <C-s> :w<CR>
 nnoremap <C-w> :q<CR>
+nnoremap <C-n> :tabnew<CR>
+nnoremap <C-o> :tabnew<CR>:FZF<CR>
 
 " vim-plug
 call plug#begin()
@@ -54,6 +56,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " coc + php = coc-phpls
 Plug 'marlonfan/coc-phpls'
+
+" vim-snippets
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
