@@ -60,6 +60,9 @@ Plug 'marlonfan/coc-phpls'
 " vim-snippets
 Plug 'honza/vim-snippets'
 
+" gitgutter
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 " coc
