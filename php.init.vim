@@ -32,6 +32,7 @@ Plug 'jiangmiao/auto-pairs'
 " themes
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
+Plug 'tomasiser/vim-code-dark'
 
 " airline
 Plug 'vim-airline/vim-airline'
@@ -52,10 +53,18 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'ryanoasis/vim-devicons'
 
 " coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
-" coc + php = coc-phpls
-Plug 'marlonfan/coc-phpls'
+" coc extensions ~> run :CocInstall
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-phpls']
+
+" ts
+Plug 'ianks/vim-tsx'
+Plug 'leafgarland/typescript-vim'
+
+" js
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " vim-snippets
 Plug 'honza/vim-snippets'
@@ -67,25 +76,26 @@ call plug#end()
 
 " coc
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+			\ pumvisible() ? "\<C-n>" :
+			\ <SID>check_back_space() ? "\<TAB>" :
+			\ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 if has('nvim')
-    inoremap <silent><expr> <c-space> coc#refresh()
+	inoremap <silent><expr> <c-space> coc#refresh()
 else
-    inoremap <silent><expr> <c-@> coc#refresh()
+	inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
 " gruvbox
 " let g:gruvbox_contrast_dark="hard"
 
 " theme
-set background=dark
-colorscheme onedark
+" set background=dark
+" colorscheme onedark
+colorscheme codedark
