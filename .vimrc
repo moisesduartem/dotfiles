@@ -8,6 +8,7 @@ set autoindent
 set hlsearch
 set incsearch
 set wildmenu
+set noswapfile 
 
 " vim-devicons
 set encoding=UTF-8
