@@ -8,7 +8,7 @@ set autoindent
 set hlsearch
 set incsearch
 set wildmenu
-set noswapfile 
+set noswapfile
 
 " vim-devicons
 set encoding=UTF-8
@@ -33,6 +33,7 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " after install, run 
 " :! gem install solargraph and :CocInstall coc-solargraph # for ruby
+" :CocInstall coc-eslint and :CocConfig to adjust settings
 
 " vim snippets
 Plug 'honza/vim-snippets'
@@ -50,6 +51,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " floaterm
 Plug 'voldikss/vim-floaterm'
+
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
@@ -65,6 +67,11 @@ Plug 'ngmy/vim-rubocop'
 
 " deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" Plugins para React, TypeScript e ESLint
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -99,9 +106,22 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
       \ "Unknown"   : "?"
       \ }
 
+" Configurações adicionais (JS, TS, JSX)
+
+" let g:typescript_react = 1
+" let g:javascript_plugin_jsx = 1
+" let g:jsx_ext_required = 0
+
+let g:typescript_complete_comments = 1
+let g:typescript_auto_insert = 1
+
+" Atalho para formatar código com ESLint
+nnoremap <leader>ff :ALEFix<CR>
+
 " gruvbox
 " let g:gruvbox_contrast_dark="hard"
 
 " theme
 set background=dark
+
 colorscheme gruvbox
