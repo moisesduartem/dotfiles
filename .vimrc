@@ -1,53 +1,106 @@
-" colorscheme / theme
-autocmd vimenter * ++nested colorscheme gruvbox
-set background=dark
-
-" functionalities
+" native settings
+syntax on
+set nu
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set nocompatible
 set autoindent
+set hlsearch
 set incsearch
 set wildmenu
 
-set number
-syntax on
-filetype plugin indent on
-filetype on
-filetype indent on
+" vim-devicons
+set encoding=UTF-8
 
-" ruby/erb
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
-autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
+" shortcuts
+" let mapleader="\<space>"
+nnoremap <F5> :source %<CR>
+nnoremap <C-j> :FloatermNew<CR>
+nnoremap <C-p> :FZF<CR>
+nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <C-i> :PlugInstall<CR>
+nnoremap <C-s> :w<CR>
+nnoremap <C-w> :q<CR>
 
-" vundle :)
-set rtp+=~/.vim/bundle/Vundle.vim
+" vim-plug
+call plug#begin()
 
-" nerdtree shortcuts
-map _ :NERDTreeFind<CR> " open nerdtree window
-map + :NERDTreeClose<CR> " open nerdtree window
+" devicons
+" Plug 'ryanoasis/vim-devicons'
 
-" tab shortcuts
-map - :tabprevious<CR> " go to the previous tab
-map = :tabNext<CR> " go to the next tab
+" coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" after install, run 
+" :! gem install solargraph and :CocInstall coc-solargraph # for ruby
 
-call vundle#begin()
+" vim snippets
+Plug 'honza/vim-snippets'
 
-Plugin 'VundleVim/Vundle.vim'
-" close (), {}, [], etc
-Plugin 'jiangmiao/auto-pairs'
-" bottom bar to show language, lines, coding, etc
-Plugin 'vim-airline/vim-airline'
-" file explorer (side navigation)
-Plugin 'preservim/nerdtree'
-" emmet for vim (faster html coding)
-Plugin 'mattn/emmet-vim'
-" ruby/rails
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
+" autopairs
+Plug 'jiangmiao/auto-pairs'
+
+" airline
+Plug 'vim-airline/vim-airline'
+
+" nerdtree 
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" floaterm
+Plug 'voldikss/vim-floaterm'
+" fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf.vim'
 
 " themes
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 
-call vundle#end()
+" ruby
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'ngmy/vim-rubocop'
+
+" deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+call plug#end()
+
+" coc
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" NERDTree configurations 
+let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeIgnore = []
+let NERDTreeStatusline = ''
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+      \ "Modified"  : "✹",
+      \ "Staged"    : "✚",
+      \ "Untracked" : "✭",
+      \ "Renamed"   : "➜",
+      \ "Unmerged"  : "═",
+      \ "Deleted"   : "✖",
+      \ "Dirty"     : "✗",
+      \ "Clean"     : "✔︎",
+      \ 'Ignored'   : '☒',
+      \ "Unknown"   : "?"
+      \ }
+
+" gruvbox
+" let g:gruvbox_contrast_dark="hard"
+
+" theme
+set background=dark
+colorscheme gruvbox
