@@ -1,6 +1,9 @@
 let mapleader = " "
 nnoremap <Space> <Nop>
 
+" cursor style
+let &t_EI = "\e[5 q"
+
 " Switch between windows
 nnoremap <Leader>h <C-w>h
 nnoremap <Leader>j <C-w>j
